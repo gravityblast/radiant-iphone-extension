@@ -10,7 +10,7 @@ This extension adds an iphone tailored ui to Radiant CMS.
   
   cd /path/to/radiant/vendor/extensions/
   
-  git clone git@github.com:pilu/radiant-iphone-extension.git iphone
+  git clone git://github.com/pilu/radiant-iphone-extension.git iphone
   
   cd /path/to/radiant/
   
