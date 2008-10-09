@@ -1,0 +1,13 @@
+<%- form_for :user, :url => iadmin_login_url, :html => { :method => 'post', :class => 'panel', :selected => 'true', :target => '_top', :title => 'Radiant CMS' } do |f| -%>
+  <fieldset>
+    <div class="row">
+      <label>Name</label>
+      <%= f.text_field :login %>
+    </div>
+    <div class="row">
+      <label>Password</label>
+      <%= f.password_field :password %>
+    </div>
+  </fieldset>
+  <a class="whiteButton" type="submit" href="#" target="_self">Login</a>
+<%- end -%>

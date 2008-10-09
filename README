@@ -1,0 +1,21 @@
+== Iphone
+
+  Created by: Andrea Franz - http://gravityblast.com
+  Version: 0.0.1
+  Contact: andrea AT gravityblast DOT com
+
+This extension adds an iphone tailored ui to Radiant CMS.
+
+== Installation
+  
+  cd /path/to/radiant/vendor/extensions/
+  
+  git clone git@github.com:pilu/radiant-iphone-extension.git iphone
+  
+  cd /path/to/radiant/
+  
+  rake radiant:extensions:iphone:install
+  
+  Restart your server
+  
+  Go to http://yoursite.com/iadmin/ with your iphone :)

@@ -1,0 +1,7 @@
+<ul id="<%= @page ? "page-#{@page.id}" : 'pages' %>" extraLabel="Edit" extraHref="<%= iadmin_page_edit_url(@page) %>" id="page-<%= @page.id %>" title="<%= @page.title %>" selected="true">
+  <li><%= link_to @page.title, iadmin_page_edit_url(@page) %></li>
+  <li class="group">Children of <%= @page.title %></li>
+  <%- @page.children.each do |page| -%>
+    <li><%= link_to page.title, iadmin_page_url(page) %></a></li>
+  <%- end -%>
+</ul>

@@ -1,0 +1,2 @@
+module Iadmin::PagesHelper
+end

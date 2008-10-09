@@ -1,0 +1,40 @@
+<%- form_for :page, :url => iadmin_page_edit_url(@page), 
+  :html => {
+    :id => "edit-page-#{@page.id}",
+    :selected => :true,
+    :class => :panel, 
+    :extraLabel => "+",
+    :extraHref => "#addPartForm",
+    :title => @page.title} do |f| -%>
+      <input id="part-index-field" name="index" type="hidden" value="<%= @page.parts.size %>" />
+      <input type="hidden" name="continue" />
+      <div class="row">
+          <label>Title</label>
+          <%= text_field :page, :title %>
+      </div>
+      <div class="parts" id="page-<%= @page.id %>-tabs">
+        <%- @page.parts.each_with_index do |part, index| -%>
+          <a href="#" onclick="PagePart.selectTab(<%= @page.id %>, <%= index %>); return false;" rel="nofollow" id="tab-part-<%= index %>" class="<%= index == 0 ? 'selected' : '' %>"><%= part.name %></a>
+        <%- end -%>
+      </div>
+      <div class="clear"></div>      
+      <div id="page-<%= @page.id %>-contents">
+        <%- @page.parts.each_with_index do |part, index| -%>
+          <div id="content-part-<%= index %>" class="row textarea" style="<%= index != 0 ? 'display: none' : '' %>">
+              <%= hidden_field_tag  "part[#{index}][name]", part.name %>
+              <%= text_area_tag     "part[#{index}][content]", h(part.content) %>
+          </div>
+        <%- end -%>
+      </div>
+    <%= submit_tag 'Save', :onclick => "this.value = 'Saving...'" %>
+<%- end -%>
+
+<div id="addPartForm" class="dialog" action="#">
+  <fieldset>
+      <h1>New Part</h1>
+      <a class="button leftButton" type="cancel"rel="nofollow" onclick="$('addPartForm').removeAttribute('selected'); return false;">Cancel</a>
+      <a class="button" type="submit" rel="nofollow" onclick="PagePart.add(<%= @page.id %>); return false;">Add</a>        
+      <label>Name:</label>
+      <input id="new-part-name" type="text" name="new-part-name"/>
+  </fieldset>
+</div>
