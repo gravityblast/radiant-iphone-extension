@@ -12,8 +12,6 @@ class Iadmin::DashboardController < ApplicationController
     elsif request.post?
       login = params[:user][:login]
       password = params[:user][:password]
-      puts params[:user].inspect
-      puts "*"*50
       if self.current_user = User.authenticate(login, password)
         redirect_to(:action => 'index')
       end

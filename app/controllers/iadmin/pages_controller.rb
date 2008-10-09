@@ -2,9 +2,7 @@ class Iadmin::PagesController < Admin::PageController
   layout nil
   
   model_class Page
-  
-  alias :parent_edit :edit
-  
+    
   def index
     @page = Page.find_by_parent_id(nil, :include => :children)
   end

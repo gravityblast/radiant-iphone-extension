@@ -14,7 +14,7 @@ This extension adds an iphone tailored ui to Radiant CMS.
   
   cd /path/to/radiant/
   
-  rake radiant:extensions:iphone:install
+  rake RAILS_ENV=production radiant:extensions:iphone:install
   
   Restart your server
   
