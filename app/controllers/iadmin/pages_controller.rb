@@ -1,4 +1,4 @@
-class Iadmin::PagesController < Admin::PageController
+class Iadmin::PagesController < Admin::PagesController
   layout nil
   
   model_class Page
